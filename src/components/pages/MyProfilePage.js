@@ -1,8 +1,11 @@
 import React from "react";
+import Form from "../form/Form";
 
 const MyProfilePage = () => {
     return (
-        <div>My Profile Page</div>
+        <>
+            <Form legend={'Мой профиль'}/>
+        </>
     )
 };
 
