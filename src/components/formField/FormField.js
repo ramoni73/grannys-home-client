@@ -2,7 +2,7 @@ import React from "react";
 import './FormField.css'
 
 const FormField = (props) => {
-    const { label, type, placeholder } = props;
+    const { label, type, placeholder, name, value, onChange } = props;
 
     return(
         <div className="form-group">
@@ -12,6 +12,9 @@ const FormField = (props) => {
                     className="form-control"
                     type={type}
                     placeholder={placeholder}
+                    name={name}
+                    value={value}
+                    onChange={onChange}
                 />
             </label>
         </div>

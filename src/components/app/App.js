@@ -7,7 +7,7 @@ import OffersPage from "../pages/OffersPage";
 import MyAcceptedOffersPage from "../pages/MyAcceptedOffersPage";
 import AcceptedOffersPage from "../pages/AcceptedOffersPage";
 import ChatsPage from "../pages/ChatsPage";
-import MyProfilePage from "../pages/MyProfilePage";
+import ProfilePage from "../pages/ProfilePage";
 
 function App() {
   return (
@@ -20,7 +20,7 @@ function App() {
             <Route path="/myAcceptedOffers" component={MyAcceptedOffersPage}/>
             <Route path="/acceptedOffers" component={AcceptedOffersPage}/>
             <Route path="/chats" component={ChatsPage}/>
-            <Route path="/myProfile" component={MyProfilePage}/>
+            <Route path="/profile" component={ProfilePage}/>
         </Switch>
 
         <Footer />

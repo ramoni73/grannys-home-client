@@ -26,7 +26,7 @@ const Header = () => {
                         <Link className="nav-link" to="/chats/">Сообщения</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/myProfile/">Мой профиль</Link>
+                        <Link className="nav-link" to="/profile/">Мой профиль</Link>
                     </li>
                 </ul>
             </div>
