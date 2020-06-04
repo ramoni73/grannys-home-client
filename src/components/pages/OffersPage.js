@@ -1,12 +1,12 @@
 import React from "react";
 import ItemList from "../itemList/ItemList";
+import Row from "../row/Row";
+import ItemDetails from "../itemDetails/ItemDetails";
 
 const OffersPage = () => {
     const rows = [
         {
             id: 1,
-            name: "this is name",
-            type: "it is a type of pet",
             etc: "etc"
         },
         {
@@ -17,9 +17,10 @@ const OffersPage = () => {
         }
     ]
     return (
-        <>
-            <ItemList rows={rows} />
-        </>
+        <Row
+            left={<ItemList rows={rows} />}
+            right={<ItemDetails />}
+        />
     )
 };
 
