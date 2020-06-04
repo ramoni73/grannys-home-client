@@ -7,6 +7,7 @@ const CardList = (props) => {
     const cards = data.map(item => {
         return(
             <Card
+                key={item.id}
                 header={item.header}
                 title={item.title}
                 text={item.text}

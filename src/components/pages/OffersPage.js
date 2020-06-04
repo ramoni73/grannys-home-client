@@ -1,28 +1,24 @@
 import React from "react";
-import Table from "../table/Table";
+import ItemList from "../itemList/ItemList";
 
 const OffersPage = () => {
-    const headers = ['id', 'name', 'Еще что-то', 'и т.п.']
     const rows = [
         {
             id: 1,
             name: "this is name",
-            something: "something",
+            type: "it is a type of pet",
             etc: "etc"
         },
         {
             id: 2,
             name: "this is another name",
-            something: "another something",
+            type: "another type of pet",
             etc: "etc.. etc... etc..."
         }
     ]
     return (
         <>
-            <Table
-                headers={headers}
-                rows={rows}
-            />
+            <ItemList />
         </>
     )
 };
