@@ -17,12 +17,6 @@ const Header = () => {
                         <Link className="nav-link" to="/offers/">Предложения</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/myAcceptedOffers/">Мои заказы</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/acceptedOffers/">Принятые заказы</Link>
-                    </li>
-                    <li className="nav-item">
                         <Link className="nav-link" to="/chats/">Сообщения</Link>
                     </li>
                     <li className="nav-item">

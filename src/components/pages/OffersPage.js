@@ -18,7 +18,7 @@ const OffersPage = () => {
     ]
     return (
         <>
-            <ItemList />
+            <ItemList rows={rows} />
         </>
     )
 };
