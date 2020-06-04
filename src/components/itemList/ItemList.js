@@ -1,19 +1,55 @@
-import React from "react";
+import React, {Component} from "react";
 import './ItemList.css'
+import WithService from "../hoc/WithService"
+import {connect} from "react-redux";
+import {offersError, offersLoaded, offersRequested} from "../../actions";
 
-const ItemList = (props) => {
-    const {rows} = props;
-    const itemDetailsRows = rows.map((item) => {
+class ItemList extends Component {
+    componentDidMount() {
+        const { service, offersRequested, offersLoaded, offersError } = this.props;
+        offersRequested();
+        service.getAllOffers()
+            .then((data) => offersLoaded(data))
+            .catch((err) => offersError(err))
+    }
+
+    render() {
+        const {offers, loading, error} = this.props;
+
+        if (loading) {
+            return "Loading..."
+        }
+
+        if (error) {
+            return "Error..."
+        }
+
         return(
-            <li className="list-group-item" key={item.id}>{item.etc}</li>
+            <ul className="list-group">
+                {
+                    offers.map(offer => {
+                        return(
+                            <li className="list-group-item" key={offer.id}>{offer.etc}</li>
+                        )
+                    })
+                }
+            </ul>
         )
-    })
-
-    return(
-        <ul className="list-group">
-            {itemDetailsRows}
-        </ul>
-    )
+    }
 }
 
-export default ItemList
+const mapStateToProps = (state) => {
+    return {
+        offers: state.offers,
+        loading: state.loading,
+        error: state.error
+    }
+};
+
+const mapDispatchToProps = {
+    offersRequested,
+    offersLoaded,
+    offersError
+};
+
+export default WithService()(connect(mapStateToProps, mapDispatchToProps)(ItemList))

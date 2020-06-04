@@ -11,6 +11,12 @@ export default class DummyService {
             name: "this is another name",
             type: "another type of pet",
             etc: "etc.. etc... etc..."
+        },
+        {
+            id: 3,
+            name: "this is the third name",
+            type: "another type of pet... yes you already know that",
+            etc: "it's for test redux"
         }
     ]
 
@@ -19,6 +25,12 @@ export default class DummyService {
     };
 
     getOffer = async () => {
+        // this._offers.forEach(offer => {
+        //     if (offer.id === id) {
+        //         return offer
+        //     }
+        // })
+
         return this._offers[0];
     };
 }
